@@ -1,6 +1,6 @@
 # 🕵️ Data Cleaning Detective
 
-Actividad interactiva de limpieza de datos para el curso de **Minería de Datos**.
+Actividad interactiva de limpieza de datos.
 
 ## 📁 Archivos
 
@@ -15,9 +15,7 @@ data_detective/
 
 ---
 
-## 🚀 Opción 1: Desplegar en Streamlit Cloud (recomendado)
-
-> Gratis, sin instalación para los estudiantes. Solo necesitan un navegador.
+## 🚀 Opción 1: Desplegar en Streamlit Cloud
 
 ### Pasos:
 
@@ -38,10 +36,6 @@ Tu app estará disponible en una URL como:
 https://tu-usuario-data-detective.streamlit.app
 ```
 
-Comparte esa URL con los estudiantes. ¡Sin instalar nada!
-
----
-
 ## 💻 Opción 2: Ejecutar localmente
 
 ```bash
@@ -56,48 +50,3 @@ streamlit run app.py
 ```
 
 La app abre automáticamente en `http://localhost:8501`
-
----
-
-## 🎯 Flujo de la actividad (10 minutos)
-
-| Fase | Descripción | Puntos |
-|------|-------------|--------|
-| 🔍 Explorar | Vista general, nulos, duplicados, distribuciones | 35 pts |
-| 🧹 Limpiar | 10 problemas a resolver interactivamente | 180 pts |
-| 🏆 Resultado | Score final + comparativa antes/después | — |
-
-### Sistema de medallas
-
-| Medalla | Puntos |
-|---------|--------|
-| 🥇 Detective Élite | ≥ 90% |
-| 🥈 Detective Experto | ≥ 70% |
-| 🥉 Detective Aprendiz | ≥ 50% |
-| 🔍 Investigador Novato | < 50% |
-
----
-
-## 🧪 Problemas en el dataset
-
-El dataset `ventas_sucias.csv` tiene los siguientes problemas intencionales:
-
-1. **Columna `notas`** — 100% vacía
-2. **13 filas duplicadas** — registros repetidos exactos
-3. **Nulos en `ciudad`** (~9%) — imputar con moda
-4. **Nulos en `vendedor`** (~7%) — imputar con moda
-5. **Nulos en `calificacion`** (~12%) — imputar con mediana
-6. **Nulos en `metodo_pago`** (~6%) — imputar con 'Desconocido'
-7. **Outliers en `precio_unitario`** — precios multiplicados x15-30
-8. **Outliers en `cantidad`** — valores entre 500-999
-9. **Totales negativos** en `total_venta`
-10. **Ciudades inconsistentes** — 'BOG', 'bogota', 'Bquilla', etc.
-
----
-
-## 📌 Notas para el profesor
-
-- El dataset se **regenera** ejecutando `generate_dataset.py` (usa semillas fijas, siempre produce el mismo resultado)
-- Los estudiantes **no pueden romper la app** — cada acción modifica solo la copia en sesión
-- Al recargar la página, la sesión se reinicia automáticamente
-- Funciona bien en móviles (layout responsivo de Streamlit)
